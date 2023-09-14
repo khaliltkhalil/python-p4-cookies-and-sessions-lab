@@ -36,7 +36,6 @@ def show_article(id):
             jsonify({"message": "Maximum pageview limit reached"}), 401
         )
     article = Article.query.filter_by(id=id).first()
-    print(article.to_dict())
     return make_response(article.to_dict(), 200)
 
 
